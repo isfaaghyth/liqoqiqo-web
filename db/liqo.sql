@@ -11,7 +11,7 @@ USE `dbliqoqiqo` ;
 CREATE  TABLE IF NOT EXISTS `dbliqoqiqo`.`id_role` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(45) NULL ,
-  PRIMARY KEY (`idrole`) )
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 
@@ -24,9 +24,9 @@ CREATE  TABLE IF NOT EXISTS `dbliqoqiqo`.`user` (
   `email` VARCHAR(45) NOT NULL ,
   `password` VARCHAR(45) NOT NULL ,
   `role_id` INT NULL ,
-  `picture` INT NULL ,
+  `picture` VARCHAR(45) NULL ,
   `mentor_id` INT NULL ,
-  PRIMARY KEY (`id_user`) ,
+  PRIMARY KEY (`id`) ,
   CONSTRAINT `role_id`
     FOREIGN KEY ()
     REFERENCES `dbliqoqiqo`.`id_role` ()
@@ -43,7 +43,7 @@ CREATE  TABLE IF NOT EXISTS `dbliqoqiqo`.`absensi` (
   `id_menti` INT NULL ,
   `id_mentor` INT NULL ,
   `time` DATETIME NULL ,
-  PRIMARY KEY (`id_absensi`) )
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 
@@ -57,7 +57,7 @@ CREATE  TABLE IF NOT EXISTS `dbliqoqiqo`.`doa` (
   `latin` VARCHAR(45) NULL ,
   `meaning` VARCHAR(45) NULL ,
   `history` VARCHAR(45) NULL ,
-  PRIMARY KEY (`id_doa`) )
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 
@@ -66,14 +66,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `dbliqoqiqo`.`riwayat` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `lat` INT NULL ,
-  `lon` INT NULL ,
+  `lat` VARCHAR(45) NULL ,
+  `lon` VARCHAR(45) NULL ,
   `address` VARCHAR(45) NULL ,
   `attendes` INT NULL ,
   `non_attendes` INT NULL ,
   `menti_id` INT NULL ,
   `time` DATETIME NULL ,
-  PRIMARY KEY (`id_riwayat`) )
+  `mentor_id` INT NULL ,
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 
@@ -82,13 +83,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `dbliqoqiqo`.`jadwal` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `lat` INT NULL ,
-  `lon` INT NULL ,
+  `lat` VARCHAR(45) NULL ,
+  `lon` VARCHAR(45) NULL ,
   `address` VARCHAR(45) NULL ,
   `time` DATETIME NULL ,
   `note` VARCHAR(45) NULL ,
   `mentor_id` INT NULL ,
-  PRIMARY KEY (`id_jadwal`) )
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 USE `dbliqoqiqo` ;
