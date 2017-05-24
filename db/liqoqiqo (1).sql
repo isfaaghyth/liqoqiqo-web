@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `doa` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
-  `arabic` varchar(100) DEFAULT NULL,
+  `arabic` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `latin` varchar(100) DEFAULT NULL,
   `meaning` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `doa`
