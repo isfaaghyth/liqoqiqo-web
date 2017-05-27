@@ -15,7 +15,7 @@
                     "mentoring_id" => $row['mentoring_id'],
                     "status_kehadiran" => $row['status_kehadiran'],
                     "hari" => $row['day'],
-                    "waktu" => $row['day']
+                    "tanggal" => $row['date']
         		)
         	)
         );
